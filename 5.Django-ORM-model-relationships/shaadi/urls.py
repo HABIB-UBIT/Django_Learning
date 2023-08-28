@@ -4,5 +4,6 @@ app_name= 'shaadi'
 
 urlpatterns=[
     path('', views.ProfileListView, name='profile_list'),
-    path('<int:profile_id>', views.ProfileDetailView, name='profile_detail')
+    path('<int:profile_id>', views.ProfileDetailView, name='profile_detail'),
+    path('<int:profile_id>/delete', views.ProfileDeleteView, name='profile_delete')
 ]

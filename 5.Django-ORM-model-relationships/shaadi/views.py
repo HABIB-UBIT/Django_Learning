@@ -10,3 +10,9 @@ def ProfileListView(request):
 def ProfileDetailView(request, profile_id):
     profile=Profile.objects.get(id=profile_id)
     return render(request, 'shaadi/profile_detail.html', {'profile': profile})
+
+def ProfileDeleteView(request, profile_id):
+    profile=Profile.objects.get(id=profile_id)
+    profile.delete()
+    profiles= Profile.objects.all()
+    return render(request, 'shaadi/profile_detail.html', {'profile': profiles})
