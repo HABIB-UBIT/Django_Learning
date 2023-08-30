@@ -1,0 +1,12 @@
+{% extends 'shaadi/base.html' %}   
+{% load static %}
+{% block content %}
+<h1>Register Here</h1>
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit"  class= "btn btn-primary">Register</button>
+    </form>
+    <p style="margin-top: 10px;">Already Registered</p>
+    <a href="{%url 'accounts:login' %}">Login Here</a>
+{% endblock %}
